@@ -4,4 +4,4 @@ streams:
     theme:
       type: ReadOnlyStream
       paths:
-        - user/themes/pinpress
+        - user/themes/lingonberry

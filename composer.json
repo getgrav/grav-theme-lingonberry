@@ -1,8 +1,8 @@
 {
-    "name": "getgrav/grav-theme-pinpress",
+    "name": "getgrav/grav-theme-lingonberry",
     "type": "grav-theme",
-    "description": "PinPress is a creative Flat Blog/Magazine grav theme and it is the perfect choice for professionals who’s looking for a magazine theme or a personal niche, corporate, and marketing blogs.",
-    "keywords": ["theme","grav", "pinpress", "blog"],
+    "description": "Lingonberry is a creative Flat Blog/Magazine grav theme and it is the perfect choice for professionals who’s looking for a magazine theme or a personal niche, corporate, and marketing blogs.",
+    "keywords": ["theme","grav", "lingonberry", "blog"],
     "homepage": "http://getgrav.org",
     "license": "CC BY 3.0",
     "support": {
@@ -20,9 +20,9 @@
         "composer/installers": "~1.0"
     },
     "extra": {
-        "installer-name": "pinpress",
+        "installer-name": "lingonberry",
         "installer-paths": {
-            "user/themes/{$name}/": ["getgrav/grav-theme-pinpress"]
+            "user/themes/{$name}/": ["getgrav/grav-theme-lingonberry"]
         }
     }
 }
