@@ -4,7 +4,7 @@
     "description": "Lingonberry is a creative Flat Blog/Magazine grav theme and it is the perfect choice for professionals who’s looking for a magazine theme or a personal niche, corporate, and marketing blogs.",
     "keywords": ["theme","grav", "lingonberry", "blog"],
     "homepage": "http://getgrav.org",
-    "license": "CC BY 3.0",
+    "license": "GPL",
     "support": {
         "irc": "irc://irc.freenode.org/grav"
     },
