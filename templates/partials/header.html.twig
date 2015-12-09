@@ -1,26 +1,22 @@
-<div id="masthead" role="banner" class="affix-top">
-  <div class="container">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <div class="btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button"><img src="{{ theme_url }}/images/bmenu.png"></div>
-        <div class="header section" id="header"><div class="widget Header" id="Header1">
-          <div id="header-inner">
-            {% if site.title  %}
-              <div class="titlewrapper">
-                <h1 class="title">
-                  <a href='{{ base_url_absolute }}' style='display: block'>{{ site.title }}</a>
-                </h1>
-              </div>
-            {% endif %}
-          </div>
-        </div></div>
-        <div class="nav-collapse collapse">
-          {% block navigation %}
-              {% include 'partials/navigation.html.twig' %}
-          {% endblock %}
-        </div>
-      </div>
+<div class="header section">
+  <div class="header-inner section-inner">
+    <a href="{% if site.author.url %}{{ site.author.url }}{% else %}{{ base_url_absolute }}{% endif %}" title="{{ site.title }}" rel="home" class="logo">
+      <img src="http://www.gravatar.com/avatar/{{ site.author.gravatar|md5 }}?s=90" alt="Gravatar"/>
+    </a>
+
+    {% if site.title  %}
+    <h1 class="blog-title">
+      <a href='{{ base_url_absolute }}'>{{ site.title }}</a>
+    </h1>
+    {% endif %}
+
+    <div class="nav-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="clear"></div>
     </div>
+    <div class="clear"></div>
   </div>
-  <div class="clear"></div>
+
 </div>

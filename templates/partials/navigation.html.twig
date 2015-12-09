@@ -15,13 +15,17 @@
     {% endfor %}
 {% endmacro %}
 
-<ul class="nav" id="menu-primary">
+<div class="navigation">
+
+  <div class="navigation-inner section-inner">
+
+  <ul class="blog-menu">
     {% if theme_config.dropdown.enabled %}
         {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}
             {% set current_page = (page.active or page.activeChild) ? 'current' : '' %}
-            <li class="{{ current_page }}">
+            <li class="{{ current_page }} current-menu-item">
                 <a href="{{ page.url }}">
                     {{ page.menu }}
                 </a>
@@ -29,7 +33,7 @@
         {% endfor %}
     {% endif %}
     {% for mitem in site.menu %}
-        <li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page ">
             <a href="{{ mitem.url }}">
                 {{ mitem.text }}
             </a>
@@ -39,3 +43,6 @@
         <li>{% include 'partials/login-status.html.twig' %}</li>
     {% endif %}
 </ul>
+</div>
+
+</div>
