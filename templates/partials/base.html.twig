@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class='{% if browser.getBrowser == 'msie' and browser.getVersion == 7 and browser.getVersion == 8 %}{% else %}v2{% endif %} {% if browser.getBrowser == 'msie' and browser.getVersion == 7 %}ie ie7 ltie8 ltie9{% endif %} {% if browser.getBrowser == 'msie' and browser.getVersion == 8 %}ie ie8 ltie9{% endif %}'>
+<html lang="en">
 <head>
     {% block head %}
         <meta charset="utf-8" />
@@ -8,11 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.ico" />
 
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
-        <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'/>
-        <link href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' rel='stylesheet'/>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab%3A400%2C700&ver=4.2.2' id='roboto-slab-css' media='all' rel='stylesheet' type='text/css'/>
-        <meta name="google-translate-customization" content="{{ site.google_translate_token }}">
+        <link rel='stylesheet' id='lingonberry_googleFonts-css'  href='//fonts.googleapis.com/css?family=Lato%3A400%2C700%2C400italic%2C700italic%7CRaleway%3A600%2C500%2C400&#038;ver=4.3.1' type='text/css' media='all' />
+
         {% block stylesheets %}
             {% do assets.addCss('theme://css/widget.css') %}
             {% do assets.addCss('theme://css/style.css') %}
@@ -29,7 +26,7 @@
             {% do assets.add('jquery',101) %}
         {% endblock %}
         {{ assets.js() }}
-        
+
     {% endblock head %}
 </head>
 <body class="home blog has-featured-image">
