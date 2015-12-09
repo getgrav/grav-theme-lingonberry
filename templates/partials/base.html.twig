@@ -37,19 +37,16 @@
     {% include 'partials/header.html.twig' %}
   {% endblock %}
 
-  <div class="site" id="page">
+  <div class="content section-inner" >
 
-    <div class="clear"></div>
     {% block body %}
-    <div class='container' id="content-wrapper">
-      <div class="row" id="primary">
+    <div class="posts" >
       {% block content %}{% endblock %}
-    </div>
     </div>
     {% endblock %}
 
     {% block footer %}
-      {% include 'partials/footer.html.twig' %}
+    {% include 'partials/footer.html.twig' %}
     {% endblock %}
   </div>
 
