@@ -29,7 +29,7 @@
 
     {% endblock head %}
 </head>
-<body class="home blog has-featured-image">
+<body class="home blog has-featured-image {{ page.header.body_classes }}">
   {% block navigation %}
       {% include 'partials/navigation.html.twig' %}
   {% endblock %}

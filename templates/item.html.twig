@@ -11,16 +11,6 @@
 {% endif  %}
 
 {% block content %}
-<div class="span9" id="content" role="main">
-  <div class="main section" id="main">
-    <div class="widget Blog" id="Blog1">
-      {% include 'partials/blog_item.html.twig' with {'truncate':false,'big_header':true} %}
-    </div>
-  </div>
-</div>
-
-<div class="span3" id="side-bar">
-  {% include 'partials/sidebar.html.twig' %}
-</div>
+  {% include 'partials/blog_item.html.twig' with {'truncate':false,'big_header':true} %}
 {% endblock %}
 {% endembed %}

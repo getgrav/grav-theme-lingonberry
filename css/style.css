@@ -1535,7 +1535,7 @@ p.logged-in-as {
 .comment-form .comment-form-email input:focus { background-image: url(../images/1x/email.png); }
 .comment-form .comment-form-url input:focus { background-image: url(../images/1x/house.png); }
 
-.comment-form input[type="submit"] {
+.comment-form button[type="submit"] {
 	width: auto;
 	max-width: none;
 	padding: 15px 20px 16px 20px;
@@ -1549,13 +1549,13 @@ p.logged-in-as {
 	-moz-border-radius: 3px;
 }
 
-.comment-form input[type="submit"]:hover {
+.comment-form button[type="submit"]:hover {
 	cursor: pointer;
 	background-color: #FF706C;
 	color: #FFF;
 }
 
-.comment-form input[type="submit"]:active {
+.comment-form button[type="submit"]:active {
 	top: 1px;
 	position: relative;
 }
