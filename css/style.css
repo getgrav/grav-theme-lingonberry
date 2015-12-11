@@ -1515,8 +1515,8 @@ p.logged-in-as {
 	border: 1px solid #EEE;
 }
 
-.comment-form .comment-form-author input { background-image: url(../images/1x/user_g.png); }
-.comment-form .comment-form-email input { background-image: url(../images/1x/email_g.png); }
+.comment-form .comment-form-author input, .comment-form .form-input-wrapper input[type="text"] { background-image: url(../images/1x/user_g.png); }
+.comment-form .comment-form-email input,  .comment-form .form-input-wrapper input[type="email"] { background-image: url(../images/1x/email_g.png); }
 .comment-form .comment-form-url input { background-image: url(../images/1x/house_g.png); background-size: 22px auto; }
 
 .comment-form textarea { line-height: 160%; height: 250px; }
@@ -1531,8 +1531,8 @@ p.logged-in-as {
 	color: #FFF;
 }
 
-.comment-form .comment-form-author input:focus { background-image: url(../images/1x/user.png); }
-.comment-form .comment-form-email input:focus { background-image: url(../images/1x/email.png); }
+.comment-form .comment-form-author input:focus, .comment-form .form-input-wrapper input[type="text"]:focus { background-image: url(../images/1x/user.png); }
+.comment-form .comment-form-email input:focus, .comment-form .form-input-wrapper input[type="email"]:focus { background-image: url(../images/1x/email.png); }
 .comment-form .comment-form-url input:focus { background-image: url(../images/1x/house.png); }
 
 .comment-form button[type="submit"] {

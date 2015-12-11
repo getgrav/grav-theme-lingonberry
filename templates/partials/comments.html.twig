@@ -34,14 +34,13 @@
         {% if field.evaluateDefault %}
             {% set value = evaluate(field.evaluateDefault) %}
         {% endif %}
-        <p class="comment-form-{{ field.name }}">
-            {% include "forms/fields/#{field.type}/#{field.type}.html.twig" %}
-        </p>
+        <p></p>
+        {% include "forms/fields/#{field.type}/#{field.type}.html.twig" %}
     {% endfor %}
 
     <p class="form-submit">
       {% for button in grav.config.plugins.comments.form.buttons %}
-      <button class="submit" type="{{ button.type|default('submit') }}">{{ button.value|default('Submit') }}</button>
+      <button class="submit" type="{{ button.type|default('submit') }}">{{ button.value|default('Post Comment') }}</button>
       {% endfor %}
     </p>
 
