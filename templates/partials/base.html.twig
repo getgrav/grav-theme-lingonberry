@@ -44,12 +44,10 @@
       {% block content %}{% endblock %}
     </div>
     {% endblock %}
-
-    {% block footer %}
-    {% include 'partials/footer.html.twig' %}
-    {% endblock %}
   </div>
-
+  {% block footer %}
+  {% include 'partials/footer.html.twig' %}
+  {% endblock %}
   <script type='text/javascript' src='{{ theme_url }}/js/flexslider.min.js'></script>
   <script type='text/javascript' src='{{ theme_url }}/js/global.js'></script>
 
