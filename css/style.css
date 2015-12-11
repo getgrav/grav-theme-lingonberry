@@ -1352,7 +1352,6 @@ a#cancel-comment-reply-link:hover,
 
 
 .comment-meta-content {
-	margin-left: 65px;
 	padding-top: 7px;
 }
 
@@ -1375,7 +1374,7 @@ a#cancel-comment-reply-link:hover,
 	text-transform: uppercase;
 }
 
-.comment-meta-content p a { color: #BBB; }
+.comment-meta-content p a, .comment-meta-content p  { color: #BBB; }
 .comment-meta-content p a:hover { color: #FF6558; }
 
 .comment-awaiting-moderation {

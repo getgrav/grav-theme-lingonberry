@@ -9,10 +9,11 @@
         <div class="comment-meta comment-author vcard" kind="m">
           <div class="comment-meta-content">
             <cite class="fn">{{comment.author|e}}</cite>
+            <p>
+              {{'PLUGIN_COMMENTS.WRITTEN_ON'|t}} {{comment.date|e}}
+            </p>
           </div>
-          <p>
-            {{'PLUGIN_COMMENTS.WRITTEN_ON'|t}} {{comment.date|e}}
-          </p>
+
         </div>
         <div class="comment-content post-content">
           {{comment.text|e}}
