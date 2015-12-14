@@ -1,5 +1,4 @@
-<div class="post">
-
+<div class="post format-{% if page.header.type %}{{ page.header.type }}{% else %}standard{% endif %}">
   {% if truncate %}
   <div class="post-bubbles">
     <a href="{{ page.url }}" class="format-bubble" title="{{ page.title }}"></a>
@@ -10,6 +9,7 @@
   {% endif %}
 
   <div class="content-inner">
+    {% if page.header.type != 'quote' %}
     <div class="post-header">
       <div class="featured-media">
         {% if page.header.youtube %}
@@ -36,6 +36,7 @@
       {% else %}
       <h2 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
       {% endif %}
+
 
       <div class="post-meta">
         <span class="post-date">{{ page.date|date(config.system.pages.dateformat.long) }}</span>
@@ -64,11 +65,11 @@
         {% endfor %}
         {% endif %}
       </div>
-
-
       <div class="clear"></div>
     </div>
+    {% endif %}
     <div class="post-content">
+      {% if page.header.type != 'quote' %}
       {% if page.header.continue_link is sameas(false) %}
       {{ page.content }}
       {% if not truncate %}
@@ -82,7 +83,6 @@
       {{ page.content }}
       {% set show_prev_next = true %}
       {% endif %}
-
       <p>
         {% if truncate and page.summary != page.content %}
         <a href="{{ page.url }}" class="read-more">Continue Reading</a>
@@ -90,6 +90,9 @@
         <a href="{{ page.url }}" class="read-more">Continue Reading</a>
         {% endif %}
       </p>
+      {% else %}
+      {{ page.content }}
+      {% endif %}
     </div>
   </div>
   {% if show_prev_next %}
