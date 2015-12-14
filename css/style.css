@@ -1798,60 +1798,66 @@ p.form-allowed-tags {
 /* Widget calendar --------------------------------------- */
 
 
-#wp-calendar {
+.ui-datepicker-calendar {
 	color: #888;
 	width: 100%;
 	max-width: 100%;
 	text-align: center;
 }
 
-#wp-calendar a { color: #FF706C; }
+.ui-datepicker-calendar a { color: #888; }
+.ui-datepicker-calendar a.ui-state-active { color: #FF706C; }
 
-#wp-calendar,
-#wp-calendar caption,
-#wp-calendar tr,
-#wp-calendar td,
-#wp-calendar th {
+.ui-datepicker-calendar,
+.ui-datepicker-calendar caption,
+.ui-datepicker-calendar tr,
+.ui-datepicker-calendar td,
+.ui-datepicker-calendar th,
+.ui-datepicker-title {
 	text-align: center;
 }
 
-#wp-calendar caption,
-#wp-calendar th,
-#wp-calendar td {
+.ui-datepicker-calendar caption,
+.ui-datepicker-calendar th,
+.ui-datepicker-calendar td,
+.ui-datepicker-title {
 	padding: 4% 2%;
 }
 
-#wp-calendar caption,
-#wp-calendar thead {
+.ui-datepicker-calendar caption,
+.ui-datepicker-calendar thead,
+.ui-datepicker-title {
 	color: #666;
 	border-bottom: 1px solid #EEE;
 }
 
-#wp-calendar caption { text-transform: capitalize; }
+.ui-datepicker-calendar caption, .ui-datepicker-title { text-transform: capitalize; }
 
-#wp-calendar thead th {
+.ui-datepicker-calendar thead th {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 0.9em;
 }
 
-#wp-calendar tfoot { border-top: 1px solid #EEE; }
-#wp-calendar tfoot td { padding: 0; }
-#wp-calendar tfoot #prev { text-align: left; }
-#wp-calendar tfoot #next { text-align: right; }
+.ui-datepicker-calendar tfoot { border-top: 1px solid #EEE; }
+.ui-datepicker-calendar tfoot td { padding: 0; }
+.ui-datepicker-calendar tfoot #prev { text-align: left; }
+.ui-datepicker-calendar tfoot #next { text-align: right; }
 
-#wp-calendar tfoot a {
+.ui-datepicker-calendar tfoot a {
 	display: block;
 	color: #999;
 	padding: 0.6em;
 }
 
-#wp-calendar tfoot a:hover {
+.ui-datepicker-calendar tfoot a:hover {
 	text-decoration: none;
 	color: #FF6558;
 	background: rgba(255, 255, 255, .05);
 }
-
+.ui-datepicker-prev, .ui-datepicker-next {
+  display: none;
+}
 
 /* Widget Flickr --------------------------------------- */
 

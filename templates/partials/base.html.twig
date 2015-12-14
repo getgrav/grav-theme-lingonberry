@@ -27,6 +27,17 @@
         {% endblock %}
         {{ assets.js() }}
 
+        {% if site.calendar %}
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript">
+        $(function() {
+          $( "#calendar_wrap" ).datepicker({
+            hideIfNoPrevNext: true
+          });
+        });
+        </script>
+        {% endif %}
+
     {% endblock head %}
 </head>
 <body class="home blog has-featured-image {{ page.header.body_classes }}">
