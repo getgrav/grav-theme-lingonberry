@@ -1,12 +1,11 @@
 {% if pagination|length > 1 %}
-<div class="blog-pager" id="blog-pager">
-    <div class="pagenavi">
+<div class="post-nav archive-nav pagination">
     {% if pagination.hasPrev %}
         <a rel="prev" href="{{ base_url }}{{ pagination.params }}{{ pagination.prevUrl }}">&laquo;</a>
     {% endif %}
     {% for paginate in pagination %}
         {% if paginate.isCurrent %}
-            <span class="current">{{ paginate.number }}</span>
+            <a href="#" class="current">{{ paginate.number }}</a>
         {% elseif paginate.isInDelta %}
             <a href="{{ base_url }}{{ pagination.params }}{{ paginate.url }}">{{ paginate.number }}</a>
         {% endif %}
@@ -14,6 +13,6 @@
     {% if pagination.hasNext %}
         <a rel="next" href="{{ base_url }}{{ pagination.params }}{{ pagination.nextUrl }}">&raquo;</a>
     {% endif %}
-    </div>
 </div>
 {% endif %}
+<div class="clear"></div>

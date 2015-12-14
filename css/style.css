@@ -842,9 +842,12 @@ html[xmlns] .slides { display: block; }
 
 .post-nav .post-nav-newer { float: right; }
 
-.post-nav a:hover {
+.post-nav a:hover, .post-nav a.current {
 	background: #FF706C;
 	color: #FFF;
+}
+.pagination a {
+      margin-left: 5px !important;
 }
 
 
