@@ -12,6 +12,35 @@
     {% if page.header.type != 'quote' %}
     <div class="post-header">
       <div class="featured-media">
+
+        {% if page.header.slideshow %}
+        <div class="flexslider">
+          <div class="flex-viewport">
+            <ul class="slides">
+              {% for slide in page.header.slideshow %}
+              {% if slide.image or slide.title  %}
+              <li>
+                {% if slide.image %}
+                <img src="{{ page.media.images[slide.image].url }}" class="attachment-post-image" alt="{{ slide.title }}">
+                {% endif %}
+                {% if slide.title %}
+                <div class="media-caption-container">
+                  <p class="media-caption">{{ slide.title }}</p>
+                </div>
+                {% endif %}
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <ul class="flex-direction-nav">
+            <li><a class="flex-prev" href="#">Prev</a></li>
+            <li><a class="flex-next" href="#">Next</a></li>
+          </ul>
+        </div>
+        {% endif %}
+
+
         {% if page.header.youtube %}
         <iframe src="{{ page.header.youtube }}?showinfo=0" frameborder="0" allowfullscreen style="width: 750px; height: 421.429px; {% if not truncate %}width: 680px;height: 392px;{% endif %}"></iframe>
         {% endif %}
@@ -21,7 +50,7 @@
         {% if page.header.soundcloud %}
         <iframe width="100%" height="403" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.header.soundcloud }}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;buying=false"></iframe>
         {% endif %}
-        {% if page.media.images|first %}
+        {% if page.media.images|first and not page.header.slideshow %}
         {{ page.media.images|first.cropZoom(750,422).html('','', 'thumb') }}
         {% endif %}
       </div>
