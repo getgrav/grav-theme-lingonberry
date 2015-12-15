@@ -59,7 +59,8 @@
       {% if page.header.youtube or page.header.vimeo or page.header.soundcloud or page.media.images %}
       </div>
       {% endif %}
-      
+
+      {% if page.header.type != 'video' %}
       {% if page.header.link %}
       <h2 class="post-title">
         {% if page.header.continue_link is not sameas(false) %}
@@ -100,10 +101,11 @@
         {% endif %}
       </div>
       <div class="clear"></div>
+        {% endif %}
     </div>
     {% endif %}
     <div class="post-content">
-      {% if page.header.type != 'quote' %}
+      {% if page.header.type != 'quote' and page.header.type != 'video' %}
       {% if page.header.continue_link is sameas(false) %}
       {{ page.content }}
       {% if not truncate %}

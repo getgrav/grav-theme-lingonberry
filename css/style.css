@@ -608,6 +608,11 @@ a.sticky-bubble:hover { z-index: 11; }
 .format-status a.format-bubble { background-image: url(../images/1x/post-formats/status.png); background-position: 12px 14px; }
 .format-video a.format-bubble { background-image: url(../images/1x/post-formats/video.png); background-position: 11px 14px; }
 
+.format-video .post-header {
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+}
 
 /* format-chat */
 
