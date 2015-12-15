@@ -9,7 +9,7 @@
   {% endif %}
 
   <div class="content-inner">
-    {% if page.header.type != 'quote' %}
+    {% if page.header.type != 'quote' and page.header.type != 'link' and page.header.type != 'chat' %}
     <div class="post-header">
       {% if page.header.youtube or page.header.vimeo or page.header.soundcloud or page.media.images %}
       <div class="featured-media">
@@ -105,7 +105,7 @@
     </div>
     {% endif %}
     <div class="post-content">
-      {% if page.header.type != 'quote' and page.header.type != 'video' %}
+      {% if page.header.type != 'quote' and page.header.type != 'video' and page.header.type != 'link' and page.header.type != 'chat' %}
       {% if page.header.continue_link is sameas(false) %}
       {{ page.content }}
       {% if not truncate %}
