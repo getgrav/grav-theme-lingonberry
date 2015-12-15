@@ -9,7 +9,7 @@
   {% endif %}
 
   <div class="content-inner">
-    {% if page.header.type != 'quote' and page.header.type != 'link' and page.header.type != 'chat' %}
+    {% if page.header.type != 'quote' and page.header.type != 'link' and page.header.type != 'chat' and page.header.type != 'aside' %}
     <div class="post-header">
       {% if page.header.youtube or page.header.vimeo or page.header.soundcloud or page.media.images %}
       <div class="featured-media">
@@ -55,7 +55,11 @@
         {% if page.media.images|first and not page.header.slideshow %}
         {{ page.media.images|first.cropZoom(750,422).html('','', 'thumb') }}
         {% endif %}
-
+        {% if page.header.description %}
+        <div class="media-caption-container">
+          <p class="media-caption">{{ page.header.description }}</p>
+        </div>
+        {% endif %}
       {% if page.header.youtube or page.header.vimeo or page.header.soundcloud or page.media.images %}
       </div>
       {% endif %}
@@ -105,7 +109,7 @@
     </div>
     {% endif %}
     <div class="post-content">
-      {% if page.header.type != 'quote' and page.header.type != 'video' and page.header.type != 'link' and page.header.type != 'chat' %}
+      {% if page.header.type != 'quote' and page.header.type != 'video' and page.header.type != 'link' and page.header.type != 'chat' and page.header.type != 'aside' %}
       {% if page.header.continue_link is sameas(false) %}
       {{ page.content }}
       {% if not truncate %}
