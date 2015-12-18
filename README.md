@@ -6,20 +6,19 @@ A clean and simple theme for bloggers, with responsive design and beautiful typo
 
 # Features
 
-* Navigation menu included
-* Clean Layout
+* Simple and Clean Layout
+* Post Formats
 * Blog Layout
-* Minimalistic
-* FeedBurner support
-* Social Sharing
-* Browser Compatibility
+* Beautiful Design
+* Slideshows inside posts
+* Featured Images
+* Video posts support
 * Supports YouTube
 * Supports SoundCloud
 * Supports Vimeo
 * SimpleSearch support
-* Feeds
-* RelatedPosts plugin support
-* Archives plugin support
+* Recent posts
+* Simple calendar
 * JSComments plugin support
 * Comments and Forms plugin support
 
@@ -81,3 +80,37 @@ If you want to set Lingonberry as the default theme, you can do so by following 
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
 
 Once this is done, you should be able to see the new theme on the frontend. Keep in mind any customizations made to the previous theme will not be reflected as all of the theme and templating information is now being pulled from the **lingonberry** folder.
+
+# Available post types
+
+There are several post formats available. You can set them by customizing **type** page header variable. For example
+```
+type: video
+```
+Available post types are: aside, audio, chat, gallery, image, link, quote, status, video. Each selections contains different icon and formatting.
+
+# Slideshows
+
+You can add slideshow to your posts by customizing slideshow page header variable. For example:
+
+```
+slideshow:
+  - title: "Audio 1 M Compact Stereo"
+    image: 1.jpg
+  - title: "Vitsœ 606 Universal Shelving System"
+    image: 2.jpg
+  - title: "SK4 Music Center"
+    image: 3.jpg
+  - title: "Vitsœ 606 Universal Shelving System"
+    image: 4.jpg
+```
+
+# Credits
+
+* Font Awesome icons license : SIL Open Font License 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+* Fitvids.js license : WTFPL http://www.wtfpl.net/
+* Flexslider 2 license : GPLv2 http://www.gnu.org/licenses/gpl-2.0.html
+* Lato font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+* Raleway font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+* screenshot.png header image : Public Domain http://en.wikipedia.org/wiki/Public_domain (taken by the theme author)
+* screenshot.png post image : CC0 Public Domain http://creativecommons.org/publicdomain/zero/1.0/

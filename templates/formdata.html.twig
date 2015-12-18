@@ -2,15 +2,16 @@
 
 {% block content %}
 <div class="post">
-  <div class="entry-container">
-    <div class="entry-content  single">
-      <h1 class="entry-title single">{{ form.message }}</h1>
-      {{ content }}
-      {% if config.plugins.form.enabled %}
-         {% include "forms/data.html.twig" %}
-      {% endif  %}
-      <div class="clear"></div>
+  <div class="content-inner comments-allowed">
+    <div class="post-header">
+      <h2 class="post-title">{{ form.message }}</h2>
     </div>
+    {{ content }}
+    {% if config.plugins.form.enabled %}
+       {% include "forms/data.html.twig" %}
+    {% endif  %}
+    <div class="clear"></div>
   </div>
 </div>
+<div class="clear"></div>
 {% endblock %}
