@@ -1,11 +1,11 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-{% include 'partials/blog_sidebar_header.html.twig' %}
-<div class="post">
-  <div class="entry-container">
-    <div class="entry-content  single">
-      <h1 class="entry-title single">{{ page.header.title }}</h1>
+  <div class="post">
+    <div class="content-inner comments-allowed">
+      <div class="post-header">
+        <h2 class="post-title">{{ page.header.title }}</h2>
+      </div>
       {{ content }}
       {% if config.plugins.form.enabled %}
       {% include "forms/form.html.twig" %}
@@ -13,7 +13,5 @@
       <div class="clear"></div>
     </div>
   </div>
-</div>
-
-{% include 'partials/blog_sidebar_footer.html.twig' %}
+  <div class="clear"></div>
 {% endblock %}

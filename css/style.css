@@ -785,7 +785,6 @@ html[xmlns] .slides { display: block; }
 .error404 .content-inner {
 	width: 100%;
 	border-radius: 0;
-	background: none;
 	box-shadow: none;
 	float: none;
 	margin-left: 0;
