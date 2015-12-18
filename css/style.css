@@ -1480,7 +1480,7 @@ a#cancel-comment-reply-link:hover { text-decoration: none !important; }
 
 #respond code { border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
 
-.comment-form p { margin-bottom: 1em; }
+.comment-form p, .form-allowed .form-field { margin-bottom: 1em; }
 .comment-form p:last-child { margin-bottom: 0; }
 
 p.comment-notes,
@@ -1489,9 +1489,9 @@ p.logged-in-as {
 	color: #666;
 }
 
-.comment-form input { max-width: 75%; }
+.comment-form input, .form-allowed input { max-width: 75%; }
 
-.comment-form label { display: none; }
+.comment-form label, .form-allowed label { display: none; }
 
 .comment-form-author .required,
 .comment-form-email .required,
@@ -1500,8 +1500,8 @@ p.logged-in-as {
 	display: none;
 }
 
-.comment-form input,
-.comment-form textarea {
+.comment-form input,.form-allowed input,
+.comment-form textarea, .form-allowed textarea {
 	-webkit-appearance: none;
 	border: none;
 	background: #FAFAFA no-repeat 96% center;
@@ -1521,27 +1521,27 @@ p.logged-in-as {
 	border: 1px solid #EEE;
 }
 
-.comment-form .comment-form-author input, .comment-form .form-input-wrapper input[type="text"] { background-image: url(../images/1x/user_g.png); }
-.comment-form .comment-form-email input,  .comment-form .form-input-wrapper input[type="email"] { background-image: url(../images/1x/email_g.png); }
+.comment-form .comment-form-author input, .comment-form .form-input-wrapper input[type="text"], .form-allowed .form-input-wrapper  input[type="text"] { background-image: url(../images/1x/user_g.png); }
+.comment-form .comment-form-email input,  .comment-form .form-input-wrapper input[type="email"], .form-allowed .form-input-wrapper input[name="email"]  { background-image: url(../images/1x/email_g.png); }
 .comment-form .comment-form-url input { background-image: url(../images/1x/house_g.png); background-size: 22px auto; }
 
-.comment-form textarea { line-height: 160%; height: 250px; }
+.comment-form textarea, .form-allowed textarea { line-height: 160%; height: 250px; }
 
-.comment-form input[type="text"]:focus,
-.comment-form input[type="email"]:focus,
+.comment-form input[type="text"]:focus, .form-allowed input[type="text"]:focus,
+.comment-form input[type="email"]:focus, .form-allowed input[type="email"]:focus,
 .comment-form input.password:focus,
-.comment-form textarea:focus {
+.comment-form textarea:focus, .form-allowed textarea:focus {
 	outline: none;
 	background-color: #2D3642;
 	border-color: #2B323A;
 	color: #FFF;
 }
 
-.comment-form .comment-form-author input:focus, .comment-form .form-input-wrapper input[type="text"]:focus { background-image: url(../images/1x/user.png); }
-.comment-form .comment-form-email input:focus, .comment-form .form-input-wrapper input[type="email"]:focus { background-image: url(../images/1x/email.png); }
+.comment-form .comment-form-author input:focus, .comment-form .form-input-wrapper input[type="text"]:focus, .form-allowed .form-input-wrapper input[type="text"]:focus { background-image: url(../images/1x/user.png); }
+.comment-form .comment-form-email input:focus, .comment-form .form-input-wrapper input[type="email"]:focus, .form-allowed .form-input-wrapper input[name="email"]:focus { background-image: url(../images/1x/email.png); }
 .comment-form .comment-form-url input:focus { background-image: url(../images/1x/house.png); }
 
-.comment-form button[type="submit"] {
+.comment-form button[type="submit"], .form-allowed button[type="submit"] {
 	width: auto;
 	max-width: none;
 	padding: 15px 20px 16px 20px;
@@ -1555,13 +1555,13 @@ p.logged-in-as {
 	-moz-border-radius: 3px;
 }
 
-.comment-form button[type="submit"]:hover {
+.comment-form button[type="submit"]:hover, .form-allowed button[type="submit"]:hover  {
 	cursor: pointer;
 	background-color: #FF706C;
 	color: #FFF;
 }
 
-.comment-form button[type="submit"]:active {
+.comment-form button[type="submit"]:active, .form-allowed button[type="submit"]:active {
 	top: 1px;
 	position: relative;
 }
