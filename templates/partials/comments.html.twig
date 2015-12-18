@@ -1,0 +1,56 @@
+{% if grav.twig.enable %}
+{% if grav.twig.comments|length %}
+<div class="comments" id="comments">
+  <h2 class="comments-title">{{ grav.twig.comments|length }} Comments:</h2>
+  <ol class="commentlist">
+    {% for comment in grav.twig.comments|array_reverse %}
+    <li class="comment">
+      <div class="comment">
+        <div class="comment-meta comment-author vcard" kind="m">
+          <div class="comment-meta-content">
+            <cite class="fn">{{comment.author|e}}</cite>
+            <p>
+              {{'PLUGIN_COMMENTS.WRITTEN_ON'|t}} {{comment.date|e}}
+            </p>
+          </div>
+
+        </div>
+        <div class="comment-content post-content">
+          {{comment.text|e}}
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+{% endif %}
+
+    <div id="respond" class="comment-respond">
+    <h2 id="reply-title" class="comment-reply-title">Leave a Reply</h2>
+    <form name="{{ grav.config.plugins.comments.form.name }}"
+          action="{{ grav.config.plugins.comments.form.action ?  base_url ~ grav.config.plugins.comments.form.action : page.url }}"
+          method="{{ grav.config.plugins.comments.form.method|upper|default('POST') }}" class="comment-form">
+    {% for field in grav.config.plugins.comments.form.fields %}
+        {% set value = form.value(field.name) %}
+        {% if field.evaluateDefault %}
+            {% set value = evaluate(field.evaluateDefault) %}
+        {% endif %}
+        <p></p>
+        {% include "forms/fields/#{field.type}/#{field.type}.html.twig" %}
+    {% endfor %}
+
+    <p class="form-submit">
+      {% for button in grav.config.plugins.comments.form.buttons %}
+      <button class="submit" type="{{ button.type|default('submit') }}">{{ button.value|default('Post Comment') }}</button>
+      {% endfor %}
+    </p>
+
+        {{ nonce_field('form', 'form-nonce') }}
+    </form>
+
+    {% if form.message %}
+    <div class="alert">{{ form.message }}</div>
+    {% endif %}
+    </div>
+
+{% endif %}

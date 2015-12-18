@@ -1,0 +1,28 @@
+{
+    "name": "getgrav/grav-theme-lingonberry",
+    "type": "grav-theme",
+    "description": "A clean and simple theme for bloggers, with responsive design and beautiful typography.",
+    "keywords": ["theme","grav", "lingonberry", "blog"],
+    "homepage": "http://getgrav.org",
+    "license": "GPL",
+    "support": {
+        "irc": "irc://irc.freenode.org/grav"
+    },
+    "authors": [
+        {
+            "name": "Team Grav",
+            "email": "devs@getgrav.org",
+            "homepage": "http://getgrav.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "lingonberry",
+        "installer-paths": {
+            "user/themes/{$name}/": ["getgrav/grav-theme-lingonberry"]
+        }
+    }
+}

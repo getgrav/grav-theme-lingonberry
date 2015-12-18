@@ -1,0 +1,12 @@
+{% set taxlist = taxonomylist.get() %}
+
+{% if taxlist %}
+  <ul>
+    {% for tax,value in taxlist[taxonomy]|slice(0, 10) %}
+    <li class="cat-item cat-item-{{ loop.index }}">
+      {% set active = uri.param(taxonomy) == tax ? 'active' : '' %}
+      <a class="{{ active }}" href="{{ base_url_absolute }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax|capitalize }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+{% endif %}

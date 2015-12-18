@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="utf-8" />
+        <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+        {% include 'partials/metadata.html.twig' %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.ico" />
+
+        <link rel='stylesheet' id='lingonberry_googleFonts-css'  href='//fonts.googleapis.com/css?family=Lato%3A400%2C700%2C400italic%2C700italic%7CRaleway%3A600%2C500%2C400&#038;ver=4.3.1' type='text/css' media='all' />
+
+        {% block stylesheets %}
+            {% do assets.addCss('theme://css/widget.css') %}
+            {% do assets.addCss('theme://css/style.css') %}
+            {% do assets.addCss('theme://css/content.css') %}
+            {% do assets.addCss('theme://css/sidebar.css') %}
+            {% do assets.addCss('theme://css/lightbox.css') %}
+            {% if browser.getBrowser == 'msie' and browser.getVersion >= 7 and browser.getVersion <= 8 %}
+                {% do assets.addCss('theme://css/ie.css') %}
+            {% endif %}
+        {% endblock %}
+        {{ assets.css() }}
+
+        {% block javascripts %}
+            {% do assets.add('jquery',101) %}
+        {% endblock %}
+        {{ assets.js() }}
+
+        {% if site.calendar %}
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript">
+        $(function() {
+          $( "#calendar_wrap" ).datepicker({
+            hideIfNoPrevNext: true
+          });
+        });
+        </script>
+        {% endif %}
+
+    {% endblock head %}
+</head>
+<body class="{{ page.header.body_classes }}">
+  {% block navigation %}
+      {% include 'partials/navigation.html.twig' %}
+  {% endblock %}
+  {% block header %}
+    {% include 'partials/header.html.twig' %}
+  {% endblock %}
+
+  <div class="content section-inner" >
+
+    {% block body %}
+    <div class="posts" >
+      {% block content %}{% endblock %}
+    </div>
+    {% endblock %}
+  </div>
+  {% block footer %}
+  {% include 'partials/footer.html.twig' %}
+  {% endblock %}
+  <script type='text/javascript' src='{{ theme_url }}/js/flexslider.min.js'></script>
+  <script type='text/javascript' src='{{ theme_url }}/js/global.js'></script>
+
+    </body>
+    </html>

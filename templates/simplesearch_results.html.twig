@@ -1,0 +1,22 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block content %}
+<div class="post">
+  <div class="content-inner comments-allowed">
+    <div class="post-header">
+      <h2 class="post-title">Search Results</h2>
+    </div>
+    {% include 'partials/simplesearch_searchbox.html.twig' %}
+
+    <p><br />Query: <strong>{{ query }}</strong> found {{ search_results.count }} {{ 'result'|pluralize(search_results.count) }}</p>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="clear"></div>
+
+{% for page in search_results %}
+    {% include 'partials/blog_item.html.twig' with {'page':page, 'truncate':true} %}
+{% endfor %}
+
+{% endblock %}

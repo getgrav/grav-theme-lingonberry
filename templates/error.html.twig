@@ -1,0 +1,14 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="post">
+  <div class="content-inner comments-allowed">
+    <div class="post-header">
+      <h2 class="post-title">Error {{ page.header.http_response_code }}</h2>
+    </div>
+    {{ page.content }}
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="clear"></div>
+{% endblock %}

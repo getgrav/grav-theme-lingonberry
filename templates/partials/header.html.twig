@@ -1,0 +1,22 @@
+<div class="header section">
+  <div class="header-inner section-inner">
+    <a href="{% if site.author.url %}{{ site.author.url }}{% else %}{{ base_url_absolute }}{% endif %}" title="{{ site.title }}" rel="home" class="logo">
+      <img src="http://www.gravatar.com/avatar/{{ site.author.gravatar|md5 }}?s=90" alt="Gravatar"/>
+    </a>
+
+    {% if site.title  %}
+    <h1 class="blog-title">
+      <a href='{{ base_url_absolute }}'>{{ site.title }}</a>
+    </h1>
+    {% endif %}
+
+    <div class="nav-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+</div>

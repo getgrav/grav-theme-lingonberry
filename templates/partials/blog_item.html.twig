@@ -1,0 +1,167 @@
+<div class="post format-{% if page.header.type %}{{ page.header.type }}{% else %}standard{% endif %}">
+  {% if truncate %}
+  <div class="post-bubbles">
+    <a href="{{ page.url }}" class="format-bubble" title="{{ page.title }}"></a>
+    {% if page.header.sticky %}
+    <a href="{{ page.url }}" title="{{ page.title }}" class="sticky-bubble">Sticky post</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="content-inner">
+    {% if page.header.type != 'quote' and page.header.type != 'link' and page.header.type != 'chat' and page.header.type != 'aside' %}
+    <div class="post-header">
+      {% if page.header.youtube or page.header.vimeo or page.header.soundcloud or page.media.images %}
+      <div class="featured-media">
+      {% endif %}
+
+        {% if page.header.slideshow %}
+        <div class="flexslider">
+          <div class="flex-viewport">
+            <ul class="slides">
+              {% for slide in page.header.slideshow %}
+              {% if slide.image or slide.title  %}
+              <li>
+                {% if slide.image %}
+                <img src="{{ page.media.images[slide.image].url }}" class="attachment-post-image" alt="{{ slide.title }}">
+                {% endif %}
+                {% if slide.title %}
+                <div class="media-caption-container">
+                  <p class="media-caption">{{ slide.title }}</p>
+                </div>
+                {% endif %}
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <ul class="flex-direction-nav">
+            <li><a class="flex-prev" href="#">Prev</a></li>
+            <li><a class="flex-next" href="#">Next</a></li>
+          </ul>
+        </div>
+        {% endif %}
+
+
+        {% if page.header.youtube %}
+        <iframe src="{{ page.header.youtube }}?showinfo=0" frameborder="0" allowfullscreen style="width: 750px; height: 421.429px; {% if not truncate %}width: 680px;height: 392px;{% endif %}"></iframe>
+        {% endif %}
+        {% if page.header.vimeo %}
+        <iframe src="{{ page.header.vimeo }}" frameborder="0" allowfullscreen="" data-aspectratio="0.5619047619047619" style="width: 750px; height: 421.429px; {% if not truncate %}width: 680px;height: 392px;{% endif %}"></iframe>
+        {% endif %}
+        {% if page.header.soundcloud %}
+        <iframe width="100%" height="403" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.header.soundcloud }}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;buying=false"></iframe>
+        {% endif %}
+        {% if page.media.images|first and not page.header.slideshow %}
+        {{ page.media.images|first.cropZoom(750,422).html('','', 'thumb') }}
+        {% endif %}
+        {% if page.header.description %}
+        <div class="media-caption-container">
+          <p class="media-caption">{{ page.header.description }}</p>
+        </div>
+        {% endif %}
+      {% if page.header.youtube or page.header.vimeo or page.header.soundcloud or page.media.images %}
+      </div>
+      {% endif %}
+
+      {% if page.header.type != 'video' %}
+      {% if page.header.link %}
+      <h2 class="post-title">
+        {% if page.header.continue_link is not sameas(false) %}
+        <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
+        {% endif %}
+        <a href="{{ page.header.link }}">{{ page.title }}</a>
+      </h2>
+      {% else %}
+      <h2 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+      {% endif %}
+
+
+      <div class="post-meta">
+        <span class="post-date">{{ page.date|date(config.system.pages.dateformat.long) }}</span>
+        <span class="date-sep"> / </span>
+        <span class="post-author">
+          {% if page.header.author.name or site.author.name %}
+          {% if page.header.author.name %}
+          {% if page.header.author.url %}
+          <a href="{{ page.header.author.url }}">{{ page.header.author.name }}</a>
+          {% else %}
+          {{ page.header.author.name }}
+          {% endif %}
+          {% else %}
+          {% if site.author.url %}
+          <a href="{{ site.author.url }}">{{ site.author.name }}</a>
+          {% else %}
+          {{ site.author.name }}
+          {% endif %}
+          {% endif %}
+          {% endif %}
+        </span>
+        <span class="date-sep"> / </span>
+        {% if page.taxonomy.tag %}
+        {% for tag in page.taxonomy.tag %}
+        <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}{% if not loop.last %}, {% endif %}</a>
+        {% endfor %}
+        {% endif %}
+      </div>
+      <div class="clear"></div>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="post-content">
+      {% if page.header.type != 'quote' and page.header.type != 'video' and page.header.type != 'link' and page.header.type != 'chat' and page.header.type != 'aside' %}
+      {% if page.header.continue_link is sameas(false) %}
+      {{ page.content }}
+      {% if not truncate %}
+      {% set show_prev_next = true %}
+      {% endif %}
+      {% elseif truncate and page.summary != page.content %}
+      {{ page.summary }}
+      {% elseif truncate %}
+      {{ page.content|truncate(550) }}
+      {% else %}
+      {{ page.content }}
+      {% set show_prev_next = true %}
+      {% endif %}
+      <p>
+        {% if truncate and page.summary != page.content %}
+        <a href="{{ page.url }}" class="read-more">Continue Reading</a>
+        {% elseif truncate %}
+        <a href="{{ page.url }}" class="read-more">Continue Reading</a>
+        {% endif %}
+      </p>
+      {% else %}
+      {{ page.content }}
+      {% endif %}
+    </div>
+  </div>
+  {% if show_prev_next %}
+  <div class="post-nav">
+    {% if not page.isFirst %}
+    <a class="post-nav-newer" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> Newer Post</a>
+    {% endif %}
+
+    {% if not page.isLast %}
+    <a class="post-nav-older" href="{{ page.prevSibling.url }}">Older Post <i class="fa fa-chevron-right"></i></a>
+    {% endif %}
+    <div class="clear"></div>
+  </div>
+  {% endif %}
+
+
+  {% if not truncate %}
+  {% if config.plugins.jscomments.enabled and config.plugins.jscomments.provider %}
+  <div class="comments">
+    <h2 class="comments-title">Comments:</h2>
+    {{ jscomments(config.plugins.jscomments.provider) }}
+  </div>
+  {% endif %}
+
+  {% if config.plugins.comments.enabled %}
+    {% include 'partials/comments.html.twig' with {'page': page} %}
+  {% endif %}
+
+  {% endif %}
+
+      <div class="clear"></div>
+    </div>

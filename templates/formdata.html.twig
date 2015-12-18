@@ -1,0 +1,17 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="post">
+  <div class="content-inner comments-allowed">
+    <div class="post-header">
+      <h2 class="post-title">{{ form.message }}</h2>
+    </div>
+    {{ content }}
+    {% if config.plugins.form.enabled %}
+       {% include "forms/data.html.twig" %}
+    {% endif  %}
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="clear"></div>
+{% endblock %}

@@ -1,0 +1,64 @@
+<div class="footer section">
+  <div class="footer-inner section-inner">
+    <div class="footer-a widgets">
+      <div class="widget widget_recent_entries">
+        <div class="widget-content">
+          <h3 class="widget-title">Recent Posts</h3>
+          <ul>
+            {% for post in page.find('/blog').children.order('date', 'desc').slice(0, 10) %}
+              <li class="recent-posts">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    {% if config.plugins.taxonomylist.enabled %}
+    <div class="footer-b widgets">
+      <div class="widget widget_categories">
+        <div class="widget-content">
+          <h3 class="widget-title">Categories</h3>
+          {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    {% endif %}
+
+    {% if site.calendar %}
+    <div class="footer-c widgets">
+      <div class="widget widget_calendar">
+        <div class="widget-content">
+          <h3 class="widget-title">Calendar</h3>
+          <div id="calendar_wrap"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    {% endif %}
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div class="credits section">
+  <div class="credits-inner section-inner">
+    {% if site.copyright.left %}
+      <p class="credits-left">
+        {{ site.copyright.left }}
+      </p>
+      {% endif %}
+      {% if site.copyright.right %}
+      <p class="credits-right">
+        {{ site.copyright.right }}
+      </p>
+    {% endif %}
+  <div class="clear"></div>
+</div>
+</div>
