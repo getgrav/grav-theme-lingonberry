@@ -8,7 +8,9 @@
     </div>
     {% include 'partials/simplesearch_searchbox.html.twig' %}
 
-    <p><br />Query: <strong>{{ query }}</strong> found {{ search_results.count }} {{ 'result'|pluralize(search_results.count) }}</p>
+    <div class="post-content">
+      <p><br />Query: <strong>{{ query }}</strong> found {{ search_results.count }} {{ 'result'|pluralize(search_results.count) }}</p>
+    </div>
 
     <div class="clear"></div>
   </div>
@@ -16,7 +18,7 @@
 <div class="clear"></div>
 
 {% for page in search_results %}
-    {% include 'partials/blog_item.html.twig' with {'page':page, 'truncate':true} %}
+{% include 'partials/blog_item.html.twig' with {'page':page, 'truncate':true} %}
 {% endfor %}
 
 {% endblock %}

@@ -6,9 +6,11 @@
     <div class="post-header">
       <h2 class="post-title">{{ form.message }}</h2>
     </div>
-    {{ content }}
+    <div class="post-content">
+      {{ content }}
+    </div>
     {% if config.plugins.form.enabled %}
-       {% include "forms/data.html.twig" %}
+    {% include "forms/data.html.twig" %}
     {% endif  %}
     <div class="clear"></div>
   </div>

@@ -1,14 +1,16 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  <div class="post">
-    <div class="content-inner comments-allowed">
-      <div class="post-header">
-        <h2 class="post-title">{{ page.header.title }}</h2>
-      </div>
-      {{ page.content }}
-      <div class="clear"></div>
+<div class="post">
+  <div class="content-inner comments-allowed">
+    <div class="post-header">
+      <h2 class="post-title">{{ page.header.title }}</h2>
     </div>
+    <div class="post-content">
+      {{ page.content }}
+    </div>
+    <div class="clear"></div>
   </div>
-  <div class="clear"></div>
+</div>
+<div class="clear"></div>
 {% endblock %}
