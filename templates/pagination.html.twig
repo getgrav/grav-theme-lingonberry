@@ -1,4 +1,9 @@
 {% if pagination|length > 1 %}
+
+{% if base_url == '' %}
+    {% set base_url = '/' %}
+{% endif %}
+
 <div class="post-nav archive-nav pagination">
     {% if pagination.hasPrev %}
         <a rel="prev" href="{{ base_url }}{{ pagination.params }}{{ pagination.prevUrl }}">&laquo;</a>
