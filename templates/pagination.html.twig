@@ -6,17 +6,20 @@
 
 <div class="post-nav archive-nav pagination">
     {% if pagination.hasPrev %}
-        <a rel="prev" href="{{ base_url }}{{ pagination.params }}{{ pagination.prevUrl }}">&laquo;</a>
+        {% set url = (base_url ~ pagination.params ~ pagination.prevUrl)|replace({'//':'/'}) %}
+        <a rel="prev" href="{{ url }}">&laquo;</a>
     {% endif %}
     {% for paginate in pagination %}
         {% if paginate.isCurrent %}
             <a href="#" class="current">{{ paginate.number }}</a>
         {% elseif paginate.isInDelta %}
-            <a href="{{ base_url }}{{ pagination.params }}{{ paginate.url }}">{{ paginate.number }}</a>
+            {% set url = (base_url ~ pagination.params ~ paginate.url)|replace({'//':'/'}) %}
+            <a href="{{ url }}">{{ paginate.number }}</a>
         {% endif %}
     {% endfor %}
     {% if pagination.hasNext %}
-        <a rel="next" href="{{ base_url }}{{ pagination.params }}{{ pagination.nextUrl }}">&raquo;</a>
+        {% set url = (base_url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
+        <a rel="next" href="{{ url }}">&raquo;</a>
     {% endif %}
 </div>
 {% endif %}
