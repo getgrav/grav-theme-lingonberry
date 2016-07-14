@@ -26,7 +26,7 @@ A clean and simple theme for bloggers, with responsive design and beautiful typo
 
 Installing the Lingonberry theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.
 
-The theme by itself is useful, but you may have an easier time getting up and running by installing a skeleton. The [Lingonberry Site Skeleton](https://github.com/getgrav/grav-skeleton-lingonberry-blog) is a self-contained repository for a complete sites which includes: sample content, configuration, theme, and plugins.
+The theme by itself is useful, but you may have an easier time getting up and running by installing a skeleton. The [Lingonberry Site Skeleton](https://github.com/getgrav/grav-skeleton-lingonberry-site) is a self-contained repository for a complete sites which includes: sample content, configuration, theme, and plugins.
 
 ## GPM Installation (Preferred)
 
@@ -44,7 +44,7 @@ You should now have all the theme files under
 
     /your/site/grav/user/themes/lingonberry
 
->> NOTE: This theme is a modular component for Grav which requires the [Grav](http://github.com/getgrav/grav), [Error](https://github.com/getgrav/grav-theme-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins.
+>> NOTE: This theme is a modular component for Grav which requires the [Grav](http://github.com/getgrav/grav), [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins.
 
 # Updating
 
