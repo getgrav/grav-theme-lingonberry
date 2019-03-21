@@ -1,6 +1,9 @@
 # v1.2.0
-## xx/xx/2016
+## mm/dd/2019
 
+1. [](#new)
+    * Set Dependency of Grav 1.5.10+ which has support for new **Deferred Block** Twig extension
+    * Implement assets rendering using **Deferred Block** Twig extension 
 1. [](#improved)
     * Added twig `t` filter for submit button translation in comments form
 
