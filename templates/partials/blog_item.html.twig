@@ -111,16 +111,16 @@
     <div class="post-content">
       {% if page.header.type != 'quote' and page.header.type != 'video' and page.header.type != 'link' and page.header.type != 'chat' and page.header.type != 'aside' %}
       {% if page.header.continue_link is sameas(false) %}
-      {{ page.content }}
+      {{ page.content|raw }}
       {% if not truncate %}
       {% set show_prev_next = true %}
       {% endif %}
       {% elseif truncate and page.summary != page.content %}
-      {{ page.summary }}
+      {{ page.summary|raw }}
       {% elseif truncate %}
-      {{ page.content|truncate(550) }}
+      {{ page.content|truncate(550)|raw }}
       {% else %}
-      {{ page.content }}
+      {{ page.content|raw }}
       {% set show_prev_next = true %}
       {% endif %}
       <p>
@@ -131,7 +131,7 @@
         {% endif %}
       </p>
       {% else %}
-      {{ page.content }}
+      {{ page.content|raw }}
       {% endif %}
     </div>
   </div>
