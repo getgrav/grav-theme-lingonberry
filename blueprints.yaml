@@ -1,5 +1,7 @@
 name: Lingonberry
-version: 1.2.0
+slug: lingonberry
+type: theme
+version: 1.2.1
 description: "A clean and simple theme for bloggers, with responsive design and beautiful typography."
 icon: group
 author:
