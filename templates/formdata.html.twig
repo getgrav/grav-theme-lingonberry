@@ -7,7 +7,7 @@
       <h2 class="post-title">{{ form.message }}</h2>
     </div>
     <div class="post-content">
-      {{ content }}
+      {{ content|raw }}
     </div>
     {% if config.plugins.form.enabled %}
     {% include "forms/data.html.twig" %}

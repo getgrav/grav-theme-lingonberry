@@ -7,7 +7,7 @@
       <h2 class="post-title">Error {{ page.header.http_response_code }}</h2>
     </div>
     <div class="post-content">
-      {{ page.content }}
+      {{ page.content|raw }}
     </div>
     <div class="clear"></div>
   </div>

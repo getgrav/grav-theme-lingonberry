@@ -14,7 +14,7 @@
 
     {% block content %}
 
-    {{ page.content }}
+    {{ page.content|raw }}
         {% for child in collection %}
         {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
         {% endfor %}
