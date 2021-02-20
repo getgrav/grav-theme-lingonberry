@@ -1,4 +1,4 @@
-{% if grav.twig.enable %}
+{% if grav.twig.enable_comments_plugin %}
 {% if grav.twig.comments|length %}
 <div class="comments" id="comments">
   <h2 class="comments-title">{{ grav.twig.comments|length }} Comments:</h2>
@@ -24,6 +24,8 @@
   </ol>
 </div>
 {% endif %}
+
+{% include "forms/fields/formname/formname.html.twig" %}  
 
     <div id="respond" class="comment-respond">
     <h2 id="reply-title" class="comment-reply-title">Leave a Reply</h2>
