@@ -1,0 +1,77 @@
+title: Item
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        lingonberry:
+          title: Lingonberry
+          type: tab
+          fields:
+            header.type:
+              name: type
+              type: select
+              label: Blog post type
+              options:
+                undefined: '---'
+                aside: aside
+                audio: audio
+                chat: chat
+                gallery: gallery
+                image: image
+                link: link
+                quote: quote
+                status: status
+                video: video
+
+            header.description:
+              name: description
+              type: text
+              label: Blog post image caption
+
+            header.sticky:
+              name: sticky
+              type: toggle
+              label: Sticky post
+              help: Should be displayed fist, but seems broken. Instead, it only renders an additional star on the post bubble.
+              options:
+                  1: PLUGIN_ADMIN.YES
+                  0: PLUGIN_ADMIN.NO
+              default: 0
+              validate:
+                  type: bool
+
+            mediaoptions:
+              type: section
+              title: Media options
+              underline: true
+
+            header.slideshow:
+              name: slideshow
+              type: list
+              label: Slideshow
+              fields:
+                .image:
+                  type: pagemediaselect
+                  label: PLUGIN_ADMIN.IMAGE
+                .title:
+                  type: text
+                  label: PLUGIN_ADMIN.TITLE
+
+            header.youtube:
+              name: youtube
+              type: text
+              label: YouTube Embed URL
+
+            header.vimeo:
+              name: vimeo
+              type: text
+              label: Vimeo Embed URL
+
+            header.soundcloud:
+              name: soundcloud
+              type: text
+              label: SoundCloud Embed URL
