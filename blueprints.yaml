@@ -15,3 +15,23 @@ bugs: https://github.com/getgrav/grav-theme-lingonberry/issues
 license: GPL
 dependencies:
   - { name: grav, version: '>=1.5.10' }
+
+form:
+  fields:
+    use_gravatar:
+        type: toggle
+        label: Gravatar Image in Blog header
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
+
+    blog_avatar:
+      type: file
+      label: Blog Avatar image
+      destination: 'user/themes/lingonberry/assets'
+      accept:
+        - image/*

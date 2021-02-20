@@ -1,7 +1,11 @@
 <div class="header section">
   <div class="header-inner section-inner">
     <a href="{% if site.author.url %}{{ site.author.url }}{% else %}{{ base_url_absolute }}{% endif %}" title="{{ site.title }}" rel="home" class="logo">
+    {% if grav.theme.config.use_gravatar %}
       <img src="https://www.gravatar.com/avatar/{{ site.author.gravatar|md5 }}?s=90" alt="Gravatar"/>
+    {% elseif grav.theme.config.blog_avatar %}
+         {{ media['user://themes/lingonberry/assets/' ~ grav.theme.config.blog_avatar|first.name].cropZoom(90,90).html() }} #}
+    {% endif %}
     </a>
 
     {% if site.title  %}
