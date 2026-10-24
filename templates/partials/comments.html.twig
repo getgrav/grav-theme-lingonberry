@@ -3,7 +3,7 @@
 <div class="comments" id="comments">
   <h2 class="comments-title">{{ grav.twig.comments|length }} Comments:</h2>
   <ol class="commentlist">
-    {% for comment in grav.twig.comments|array_reverse %}
+    {% for comment in grav.twig.comments|reverse %}
     <li class="comment">
       <div class="comment">
         <div class="comment-meta comment-author vcard" kind="m">
