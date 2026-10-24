@@ -25,6 +25,11 @@
           {% do assets.add('jquery',101) %}
       {% endblock %}
 
+      {% block assets deferred %}
+        {{ assets.css()|raw }}
+        {{ assets.js()|raw }}
+      {% endblock %}
+
       {% if site.calendar %}
       <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
       <script type="text/javascript">
@@ -35,11 +40,6 @@
       });
       </script>
       {% endif %}
-
-      {% block assets deferred %}
-        {{ assets.css()|raw }}
-        {{ assets.js()|raw }}
-      {% endblock %}
 
     {% endblock head %}
 </head>
