@@ -1,3 +1,10 @@
+# v1.2.2
+## 10/23/2026
+
+1. [](#bugfix)
+    * Blog posts with comments no longer fail on Grav 2, which dropped the `array_reverse` filter the comment list used
+    * The footer copyright lines show their links again instead of the HTML as text
+
 # v1.2.1
 ## 01/19/2021
 

@@ -51,12 +51,12 @@
   <div class="credits-inner section-inner">
     {% if site.copyright.left %}
       <p class="credits-left">
-        {{ site.copyright.left }}
+        {{ site.copyright.left|raw }}
       </p>
       {% endif %}
       {% if site.copyright.right %}
       <p class="credits-right">
-        {{ site.copyright.right }}
+        {{ site.copyright.right|raw }}
       </p>
     {% endif %}
   <div class="clear"></div>
